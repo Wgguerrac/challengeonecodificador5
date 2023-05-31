@@ -94,11 +94,19 @@ const modoPantalla = localStorage.getItem("modo");
         if( mensaje.value.length >= 1 ){
             uno = 1, dos = 0;
             const textodEncriptado = revisaencriptado(mensaje.value);
-            const $btnclear       = document.getElementById("clear");      
+            const $btnc           = document.getElementById("copiar");
+            const $btnci          = document.getElementById("copiari");
+            const $msj            = document.getElementById("msj");
+            const $btnclear       = document.getElementById("clear");
+            const $img_el         = document.getElementById("img_el");    
             
             respuesta.value = textodEncriptado;
             mensaje.value = "";
-            $btnclear.style.display = "none";
+            $btnclear.style.display = "none"; 
+            $btnc.style.display     = "inline-block";
+            $btnci.style.display    = "inline-block";
+            $img_el.style.display   = "none";
+            $msj.style.display      = "none";
         }       
     }
     
