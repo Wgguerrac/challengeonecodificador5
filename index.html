@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Challenger Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body >
+        <div class="container">
+
+            <header class="header">
+                <img class="logo" src="/icons/Alura_icon2.png" alt="Icono Alura Latam">
+                <nav class="nav">
+                    <p   class="nav-item g5"></p> 
+                    <a   class="nav-item" href="https://github.com/Wgguerrac">
+                        <i class="fa-brands fa-github logo-nav"></i></a>
+                    <a   class="nav-item"href="https://gt.linkedin.com">
+                        <i class="fa-brands fa-linkedin logo-nav"></i></a>
+                    <div class="nav-item nav-toogle">
+                        <input type="checkbox" id="toogle" name="toogle" value="OK" class="offcheck" onclick="aplicarmodo()">
+                        <label for="toogle" class="switch nav-toogle-icons">
+                            <span class="nav-toogle-icona"><i class="fa-solid fa-moon"></i></span>
+                            <span class="nav-toogle-iconb"><i class="fa-solid fa-sun"></i></span> 
+                        </label>
+
+                    </div>    
+                </nav>
+            </header>
+
+            <section class="sectiona">
+                <div class="sectiona-container"><h3 class="txt-esp"></h3></div>
+                <textarea class="txt-encripta" id="mensaje" cols="30" rows="10" placeholder="   Ingrese aquí el texto a encriptar"></textarea>
+                <span class="txt-alert">
+                    <i class="fa-solid fa-circle-exclamation txt-alert-icon"></i>
+                    <span id="txt-alert"></span>
+                </span>
+                <div class="sectiona-btn">
+                    <button class="btn-e" onclick="initEncriptar()">Encriptar</button>
+                    <button class="btn-d" onclick="initdEncriptar()">Desencriptar</button>
+                </div>
+            </section >
+
+            <section class="sectionb">
+                <textarea class="txt-desencripta" id="respuesta" cols="30" rows="10" readonly></textarea>
+                <img class="img_el" id="img_el" src="/icons/el.png" alt="image textarea">
+                <p id="msj"  class="sectionb-msj">Ningún mensaje encriptado</p>
+                <div class="container-clear">
+                    <span id="clear" class="container-clear-icon" style="display: none;" onclick="Clear()"><i class="fa-solid fa-broom"></i></span>
+                </div>
+                <div class="sectionb-btn">
+                    <button style="display: none ;" id="copiar" class="btn-c" onclick="Copiar()">Copiar
+                    <span class="sectionb-icon" id="copiari"><i class="fa-solid fa-copy"></i></span>
+                    <button style="display: none ;" id="copiado" class="btn-c" onclick="Copiar()">Copiado
+                    <span class="sectionb-icon" id="copiari"><i class="fa-solid fa-copy"></i></span>                    
+                    </button>
+                    
+                </div>
+                
+            </section>
+
+            <footer class="footer">
+                <a   class="footer-item" href="#">
+                    <img class="logo-nav" src="/icons/copyright.png" alt="Icono Copyright"></a>
+                <div id="date" class="colorcopy espacio"></div>  
+                <a   class="footer-item"href="#">
+                    <img class="logo-nav" src="/icons/letra-w.png" alt="Icono Letra W"></a>
+                <a   class="footer-item"href="#">
+                    <img class="logo-nav" src="/icons/letra-g.png" alt="Icono Letra G"></a>
+                    <div id="hours"></div>                        
+            </footer> 
+        </div>
+    <script src="code.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>   
+    </body>
+</html>

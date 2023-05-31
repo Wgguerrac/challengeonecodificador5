@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Laila&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:wght@100&display=swap');
+
+:root{
+    /*Configuraciones Generales modificables*/
+    
+    /*Body */
+    --tamanhiowidth: 1400px;
+    --bodytipodeletra: "Pathway Extreme";
+
+    --background: #c7dee3 ;
+    --colortext:  #0A3871 ;
+    --colorotros: #0A3871 ;
+    --filtercolor: invert(14%) sepia(26%) saturate(6060%) hue-rotate(200deg) brightness(99%) contrast(93%);
+    --shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+    --dbackground: #2e333e ;
+    --dcolortext:  #2e333e ;
+    --dcolorotros: white ;
+    --dfiltercolor: invert(93%) sepia(0%) saturate(28%) hue-rotate(26deg) brightness(105%) contrast(106%);
+    --dshadow: 2px 2px 2px 1px rgba(227, 232, 241, 0.693);
+
+    --bodybackground: var(--background) ;
+    --domcolor: var(--colortext) ;
+    --buttoncolor-e: var(--colortext) ; 
+    --buttoncolor-c: var(--colortext) ;
+    --iconcolor: var(--colorotros) ;
+    --iconfilter: var(--filtercolor); 
+    --hoverbuttonbackground: white ;
+
+    /*Header */
+    --headerbackground: transparent;
+
+    /*Sección A */
+    --sectioabackground: transparent ;
+
+    /*Sección B */
+    --sectiobbackground: transparent ;    
+
+    /*Footer */
+    --footerbackground: transparent ;     
+}
+
+body{
+    background-color: var(--bodybackground);
+    max-width: var(--tamanhiowidth);
+    width: 100% ;
+    height: 120%;
+    margin: auto ;
+    padding: 5px;    
+    font-family: var(--bodytipodeletra);
+    font-size: 1em;
+    color: var(--domcolor);
+}
+
+.container{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr, 1fr, 2fr, 2fr, 2fr, 2fr;
+    grid-template-rows: 2fr, auto, 2fr;  
+    grid-template-areas:    
+    "header   header    header     header    header     header"
+    "sectiona sectiona  sectiona   sectiona  sectionb   sectionb"
+    "footer   footer    footer     footer    footer     footer";
+    
+}
+
+.header{
+    background: var(--headerbackground );
+    grid-area: header ;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    margin: 0 45px; 
+}
+
+.logo{
+    width: 40px;
+    margin: 5px;
+    padding: 5px; 
+    filter: var(--iconfilter);  
+}
+
+.nav{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.g5{
+    text-transform: uppercase;
+    font-size: 1.25em;
+    font-weight: bold;
+    opacity: 60%;    
+}
+
+.nav-item{
+    display: inline-block;
+    padding: 5px;
+    margin: 0 6px;
+    text-decoration: none;
+}
+
+
+.nav-item .logo-nav{
+    width: 40px;
+    font-weight: 100;
+    font-size: 40px;
+    color: var(--iconcolor) ;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    
+    /*filter: invert(14%) sepia(26%) saturate(6060%) hue-rotate(200deg) brightness(99%) contrast(93%);*/
+}
+
+.nav-item .logo-nav:hover {
+    transition: 2s all ;
+    transform: scale(1.10);
+}
+
+.nav-toogle{
+    padding: 5px;
+    display: flex;
+
+}
+
+.offcheck{
+    display: none ;
+}
+
+.nav-toogle-icons{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.nav-toogle-icona{
+   position: absolute;
+   font-size: 20px;
+   top: calc( 50% - 12px) ;
+   left: 12px;
+}
+
+.nav-toogle-iconb{
+    position: absolute;
+    font-size: 20px;
+    top: calc( 50% - 12px) ;
+    right: 12px;
+ }
+
+.switch {
+    background: var(--bodybackground) ;
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    border: 2px solid var(--domcolor) ;
+    border-radius: 25px;    
+    cursor: pointer;
+    transition: .8s;
+}
+
+.switch::after{
+    content: "";
+    background-color: var(--domcolor) ;
+    position: absolute;
+    width: 40px;
+    height: 34px ;
+    border-radius: 50%;
+    top: calc( 50% - 19px) ;
+    left: -2px ;
+    border: 2px solid whitesmoke ;
+    transition: all 2s ;
+    
+}
+
+input[type="checkbox"]:checked + .switch {
+    background:  white  ;
+    border: 2px solid lightsteelblue ;
+}
+
+input[type="checkbox"]:checked + .switch::after{
+    transform: translateX(40px);
+    background: white ;
+    border: 2px solid lightsteelblue ;   
+}
+
+.sectiona{
+    background: var(--sectioabackground );
+    grid-area: sectiona ;
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.sectiona-container{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+
+.txt-esp{
+    font-size: 1.25em;
+    letter-spacing: 4px;
+    color: var(--iconcolor); 
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 80%;
+    
+}
+
+.sectiona .txt-esp::before{
+    content: "";
+    align-items: center; 
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    top: center;
+    left: 0;
+    font-size: 1.25em;
+    background-color: var(--bodybackground);
+    border-left: 3px solid rgb(193, 30, 30) ;
+    animation: animate 7s steps(30) infinite;
+}
+
+@keyframes animate {
+    40%, 60%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.txt-encripta{
+    margin: 10px;
+    padding: 20px;
+    width: 90%;
+    min-width: 600px;
+    height: 350px;
+    color: var(--domcolor);
+    font-weight: bold ;
+    border-radius: 7px ;
+    border: none ;
+    resize: none ;
+    outline: 0 ;
+    box-shadow: var(--shadow);
+}
+
+.txt-encripta::placeholder{
+    color: var(--domcolor);
+    opacity: 60%;
+}
+
+.txt-alert{
+    display: flex ;
+    justify-content: center;
+    margin: 5px;
+    color: var(--iconcolor);
+    font-size: 0.9em;
+}
+
+.txt-alert .txt-alert-icon{
+    margin-right: 5px;
+} 
+
+
+.sectiona-btn button{
+    width: 250px;
+    height: 50px;
+    margin: 15px;
+    color: var(--buttoncolor-e) ;
+    font-weight: bold ;
+    border-radius: 15px ;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .8s;
+    box-shadow: var(--shadow);
+}
+
+.sectiona-btn button:hover {
+    background: var(--hoverbuttonbackground) ;
+    transition: 2s all ;
+    transform: scale(1.05);
+}
+
+.sectionb{
+    background: var(--sectiobbackground );
+    grid-area: sectionb ;
+    padding: 10px 15px 10px 15px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.container-clear{
+    position: absolute;
+    width: 80%;
+    height: 90%;
+    margin-top: 40px;
+    display: flex;
+}
+
+.sectionb .container-clear-icon{
+    position: absolute;
+    color: var(--domcolor);
+    top: calc(5%);
+    left: calc(85%);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.txt-desencripta{
+    margin: 10px;
+    padding: 20px;
+    width: 75%;
+    min-width: 350px;
+    max-width: 600px;
+    height: 450px;
+    color: var(--domcolor);
+    font-weight: bold;
+    border-radius: 7px ;
+    border: none ;
+    resize: none ;
+    outline: 0 ;
+    box-shadow: var(--shadow);
+}
+
+.img_el{
+    position: absolute;
+    margin-bottom: 100px;
+    width: 300px;
+    opacity: 90%;
+}
+
+.sectionb-msj{
+    position:absolute;
+    bottom: 10% ;
+    color: var(--domcolor) ;
+    font-weight: bold ;
+    opacity: 70% ;
+}
+
+.sectionb-btn button{
+    background: var(--hoverbuttonbackground) ;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    margin-bottom: 15px;
+    color: var(--buttoncolor-c) ;
+    font-weight: bold ; 
+    border-radius: 15px ;
+    border: 2px solid var(--buttoncolor-c);
+    opacity: 50%;
+    bottom: 10% ;
+    left: 50% ;
+    margin-left: -125px;
+    cursor: pointer;
+    transition: .8s;
+    box-shadow: var(--shadow);
+}
+
+.sectionb-icon{
+    position: absolute;
+    color: var(--buttoncolor-c);
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
+    bottom: 12% ;
+    left: 50% ;
+    margin-left: 80px;
+    opacity: 50%;
+}
+
+.sectionb-icon:hover{
+    color: var(--iconcolor) ; 
+}
+
+.sectionb-btn button:hover{
+    background: var(--bodybackground) ;
+    color: var(--iconcolor) ;
+    border: 2px solid var(--iconcolor);
+    transition: all 2s  ;
+    transform: scale(1.05); 
+}
+
+
+.footer{
+    background: var(--footerbackground );
+    grid-area: footer ;
+    padding: 5px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.espacio{
+    padding: 0 5px;
+}
+
+.colorcopy{
+    color: var(--iconcolor);
+}
+
+.footer-item .logo-nav{
+    width: 15px;
+    display:block;
+    filter: var(--iconfilter);
+}
+
+
+
+
+@media screen and (max-width:1080px ) {
+
+    .header{
+        margin: 0 40px; 
+    }
+
+    .container{
+        width: 100% ;
+        height: 120%;
+        grid-template-areas:    
+        "header    header    header     header    header     header"
+        "sectiona  sectiona  sectiona   sectiona  sectiona   sectiona"
+        "sectionb  sectionb  sectionb   sectionb  sectionb   sectionb"
+        "footer    footer    footer     footer    footer     footer";       
+    }
+ 
+    .sectiona{
+        padding: 15px 5px 15px 5px;
+        margin: auto;
+    }
+
+    .txt-encripta{
+        height: 450px;
+        max-width: 450px;
+    }
+
+    .txt-desencripta{
+        height: 450px;
+        max-width: 450px;
+    }
+
+    .sectionb{
+        width: 65%;
+        margin: auto;
+    }
+
+    .container-clear{
+        margin-top: 5px;
+    }
+    
+    .img_el{
+        margin-bottom: 120px;
+        width: 300px;
+    }
+
+    .sectionb-msj{
+        bottom: 10% ;
+    }
+
+    .sectionb-btn button{
+        bottom: 8% ;
+       
+    }
+
+    .sectionb-icon{
+        bottom: 10% ;
+    }
+    
+}
+
+
+@media screen and (max-width:500px ) {
+   
+    .container{
+        width: 100% ;
+        height: 120%;
+        grid-gap: 2px;
+        grid-template-areas:    
+        "header    header    header     header    header     header"
+        "sectiona  sectiona  sectiona   sectiona  sectiona   sectiona"
+        "sectionb  sectionb  sectionb   sectionb  sectionb   sectionb"
+        "footer    footer    footer     footer    footer     footer";       
+        justify-items: center;
+        margin: auto;
+
+    }
+
+    .header{ 
+        width: 50%; 
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        
+    }
+
+    .sectiona{
+        padding: 15px 5px 15px 5px;
+        margin: auto;
+
+    }
+
+    .txt-encripta{
+        margin: 5px 0;
+        width: 300px;
+        min-width: 300px;
+        height: 500px;
+        max-width: 500px;
+    }
+    
+    .sectiona-btn button{
+        width: 250px;
+        height: 50px;
+        border-radius: 7px ;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+        margin: 15px 0;
+    }
+
+    .sectionb{
+        padding: 15px 5px 15px 5px;
+
+    } 
+
+    .txt-desencripta{
+        margin: 5px 0;
+        width: 300px;
+        min-width: 300px ;
+        height: 500px;
+        max-width: 500px;
+    }
+
+    .sectionb .container-clear-icon{
+        top: calc(3%);
+        left: calc(95%);
+    }
+
+    .sectionb-msj{
+        bottom: 15% ;
+    }
+
+    .sectionb-btn button{
+        bottom: 6% ;
+       
+    }
+
+    .sectionb-icon{
+        bottom: 8% ;
+    }
+
+    .nav-item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 6px; 
+    }
+  
+    
+}
+
